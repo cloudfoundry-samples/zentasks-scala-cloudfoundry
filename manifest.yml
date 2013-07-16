@@ -1,17 +1,14 @@
---- 
-applications: 
-  dist/zentask-1.0.zip: 
-    instances: 1
-    mem: 256M
-    url: ${name}.${target-base}
-    name: scaladayszentasks
-    infra: aws
-    services: 
-      tasks-db 
-        type: postgresql
-    framework: 
-      info: 
-        exec: 
-        description: Play Framework Application
-        mem: 256M
-      name: play
+---
+applications:
+- name: zentasks
+  memory: 512M
+  instances: 1
+  host: zentasks-${random-word}
+  domain: cfapps.io
+  path: dist/zentask-1.0.zip
+  services:
+    tasks-db:
+      label: elephantsql
+      provider: elephantsql
+      version: n/a
+      plan: turtle
