@@ -6,9 +6,15 @@ applications:
   host: zentasks-${random-word}
   domain: cfapps.io
   path: dist/zentask-1.0.zip
+  buildpack: https://github.com/cloudfoundry/java-buildpack
   services:
     tasks-db:
       label: elephantsql
       provider: elephantsql
       version: n/a
       plan: turtle
+    newrelic:
+      label: newrelic
+      provider: newrelic
+      version: n/a
+      plan: standard
