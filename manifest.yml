@@ -6,7 +6,7 @@ declared-services:
 
 applications:
 - name: zentasks
-  memory: 512M
+  memory: 1.5G
   instances: 1
   host: zentasks-${random-word}
   path: dist/zentask-1.0.zip
