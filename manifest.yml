@@ -8,7 +8,5 @@ applications:
   path: dist/zentask-1.0.zip
   services:
     tasks-db:
-      label: elephantsql
-      provider: elephantsql
-      version: n/a
-      plan: turtle
+      label: compose-for-postgres
+      plan: Standard
