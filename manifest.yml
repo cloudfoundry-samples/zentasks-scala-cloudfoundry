@@ -1,12 +1,14 @@
 ---
+declared-services: 
+    my_postgres: 
+        label: compose-for-postgres 
+        plan: Standard 
+
 applications:
 - name: zentasks
   memory: 512M
   instances: 1
   host: zentasks-${random-word}
-  domain: cfapps.io
   path: dist/zentask-1.0.zip
   services:
-    tasks-db:
-      label: compose-for-postgres
-      plan: Standard
+   - my_postgres
